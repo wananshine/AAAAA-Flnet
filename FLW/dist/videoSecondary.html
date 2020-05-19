@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FLENT</title>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=10,chrome=1">
+    <meta name=google-site-verification content=xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=renderer content="webkit|ie-comp|ie-stand">
+    <meta name=theme-color content="#000000">
+    <meta itemprop=name content="">
+    <meta itemprop=image content="">
+    <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.7.2/skins/default/aliplayer-min.css" />
+    <link href="./static/css/public/reset.css" rel="stylesheet" />
+    <link href="./static/css/public/swiper.min.css" rel="stylesheet" />
+    <link href="./static/css/playvideo.css" rel="stylesheet" />
+    <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+</head>
+
+<body>
+    <article class="playvideo-panel" id="playvideo-panel">
+        <div style="width: 1200px; margin: 100px auto">
+            <a href="index.html">首页</a>
+            <a href="playSecondary.html">回放二级页面</a>
+            <a href="videoSecondary.html">视频二级页面</a>
+            <a href="livingDetail.html">直播详情页面</a>
+            <a href="playbackDetail.html">回放详情页面</a>
+            <a href="videoDetail.html">视频详情页面</a>
+        </div>
+        <div class="playback-layer">
+            <h3 class="play-title">热门视频</h3>
+            <div class="play-list">
+                <dl class="play-el" v-for="(video, videoIndex) in hotPlayer" :key="videoIndex" v-cloak>
+                    <dt class="el-watch">
+                        <!--:style="{backgroundImage:'url(' + video.src + ')'}"-->
+                        <a class="watch-link" :href="'videoDetail.html?id='+video.id">
+                            <img :src="video.image_url" :alt="video.image_url" />
+                        </a>
+                        <i class="watch-num">{{video.click_num}}点击</i>
+                        <i class="watch-name">{{video.title}}</i>
+                        <p class="watch-icon"></p>
+                        <a class="watch-mask" :href="'videoDetail.html?id='+video.id" target="_blank"></a>
+                    </dt>
+                    <dd class="el-wrap">
+                        <h4 class="el-title">商品推荐</h4>
+                        <div class="el-goods">
+                            <!-- Swiper -->
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="el-cell swiper-slide" v-for="(product, productIndex) in video.goods_ids" :key="productIndex">
+                                        <a class="cell-sku" :href="product.url">
+                                            <div class="sku-img"><img :src="product.image" /></div>
+                                            <div class="sku-name">{{product.goods_name}}</div>
+                                            <div class="sku-price">￥{{product.price}}</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Add Pagination -->
+                                <!--<div class="swiper-pagination"></div>-->
+                                <!--左箭头-->
+                                <div class="swiper-button-prev"></div>
+                                <!--右箭头-->
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </article>
+    <script type="text/javascript" src="static/js/public/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/js/public/swiper.min.js"></script>
+    <script type=text/javascript src="./static/js/public/vue.js"></script>
+    <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+    <script type="text/javascript" src="static/js/playvideo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+.pay-container{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.2);
+    display: block;
+}
+.pay-body{
+	width: 630px;
+    margin: 0 auto;
+	border: 3px solid rgb(216, 216, 216);
+    margin-top: 270px;
+}
+.pay-header{
+	background-color: #f3f3f3;
+    border-bottom: none;
+    position: relative;
+    height: 50px;
+    padding: 0 10px;
+}
+.pay-header h2{
+    color: #333;
+    line-height: 50px;
+    float: left;
+    font-size: 14px;
+    font-weight: 400;
+}
+.pay-header span{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    float: right;
+    line-height: 50px;
+    color: #333;
+    font-size: 24px;
+}
+.pay-content{
+    position: relative;
+    width: 630px;
+    height: 349px;
+    background: url("../img/window-wx.jpg") no-repeat center;
+    background-size: cover;
+    text-align: center;
+    margin: 0 auto;
+}
+.pay-content img{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 62px;
+    top: 100px;
+    background-color: #666666;
+}
+
+

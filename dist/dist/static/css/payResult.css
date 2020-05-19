@@ -1,0 +1,117 @@
+#container{
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #C9C9C9;
+    margin-top: 30px;
+    padding: 60px 30px 45px;
+    overflow: hidden;
+}
+.result-header{
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.result-header .left{
+    float: left;
+    width: 66px;
+    height: 66px;
+    line-height: 88px;
+    /*background-color: #00CC99;*/
+    background-color: #f00;
+    border-radius: 50%;
+    text-align: center;
+}
+.result-header .right{
+    width: 80%;
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.result-header .right ul li p{
+    float: left;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 18px;
+}
+.result-header .right .success{
+    color: #00cc99;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 14px;
+}
+.result-header .right .failed{
+    color: #f00;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 14px;
+}
+.result-header .right .order span{
+    font-weight: 600;
+}
+.result-header .right .sum span{
+    color: #f00;
+}
+.result-content{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+.result-content .order-info thead{
+    background-color: #f2f2f2;
+}
+.result-content .order-info thead tr th{
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 16px;
+}
+.result-content .order-info tbody tr td{
+    padding: 20px 0;
+    border: 1px solid #ccc;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    vertical-align: middle;
+    display: table-cell;
+    line-height: 18px;
+}
+.result-content .order-info .order-number{
+    width: 25%;
+    text-align: left;
+    padding-left: 50px;
+}
+.result-content .order-info .order-price{
+    width: 13%;
+    color: #f00;
+    font-weight: 600;
+}
+.result-content .order-info .order-amount{
+    width: 14%;
+}
+.result-content .order-info .order-goodsName{
+    width: 38%;
+    text-align: left;
+    padding-left: 10px;
+}
+.result-bottom{
+    width: 100%;
+    text-align: center;
+}
+.result-bottom .back{
+    width: 140px;
+    height: 40px;
+    background-color: #f00;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin-top: 40px;
+}
+
+
+
+
+
+

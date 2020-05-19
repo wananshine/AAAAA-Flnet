@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FLENT</title>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=10,chrome=1">
+    <meta name=google-site-verification content=xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=renderer content="webkit|ie-comp|ie-stand">
+    <meta name=theme-color content="#000000">
+    <meta itemprop=name content="">
+    <meta itemprop=image content="">
+    <link href="./static/css/public/reset.css" rel="stylesheet" />
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link href="./static/css/index.css" rel="stylesheet" />
+    <style>
+        .grid-content{margin-top:0.6rem !important; line-height: 2rem;}
+    </style>
+</head>
+
+<body>
+    <article class="floor-panel" id="floor-panel">
+        <div style="text-align: center;">
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple"><span style="opacity: 0">1</span></div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple"><span style="opacity: 0">1</span></div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple"><span style="opacity: 0">1</span></div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">稅前淨利率0</div></el-col>
+              <!--<el-col :span="4"><div class="grid-content bg-purple">稅前淨利率5%</div></el-col>
+              <el-col :span="4"><div class="grid-content bg-purple">稅前淨利率10%</div></el-col>-->
+            </el-row>
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">項目</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">金額</div></el-col>
+              <!--<el-col :span="4"><div class="grid-content bg-purple">金額</div></el-col>
+              <el-col :span="4"><div class="grid-content bg-purple">金額</div></el-col>-->
+            </el-row>
+        </div>
+        <div v-if="false" style="text-align: center; font-size: 1rem">
+            <el-row :gutter="10" v-for="(tr, tridx) in trList" v-cloak :key="tridx">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr.formula}}</div></el-col>
+                
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  
+                  <input v-if="!tr.dis" :disabled="tr.dis" :value="tr.pre0" />
+                  
+                  <input v-if="tr.formula == 'C=A-B'" :disabled="tr.dis" :value="val1" />
+                  
+                  <input v-if="tr.formula == 'D'" :disabled="tr.dis" :value="val2" />
+                  
+                  <input v-if="tr.formula == 'D2=A*5%'" :disabled="tr.dis" :value="val3" />
+                  
+                  <input v-if="tr.formula == 'D3=A*5%'" :disabled="tr.dis" :value="val4" />
+                  
+                  <input  v-if="tr.formula == 'E'" :disabled="tr.dis" :value="val5" />
+                  
+                  <input v-if="tr.formula == 'E2=A*5%'" :disabled="tr.dis" :value="val6" />
+                  
+                  <input v-if="tr.formula == 'E3'" :disabled="tr.dis" :value="val7" />
+                  
+                  <input v-if="tr.formula == 'E3k=A*30%'" :disabled="tr.dis" :value="val8" />
+                  
+                   <input v-if="tr.formula == 'E4=B*30%'" :disabled="tr.dis" :value="val9" />
+                  
+                  <input v-if="tr.formula == 'F=C-D-E'" :disabled="tr.dis" :value="val0" />
+                  
+                  </div></el-col>
+                
+              <!--<el-col :span="4"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" v-show="false"><input :value="tr.pre5" /></div></el-col>-->
+              <!--<el-col :span="4"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" v-show="false"><input :value="tr.pre10" /></div></el-col>-->
+            </el-row>
+        </div>
+        <div style="text-align: center; font-size: 1rem;">
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr1.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr1.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr1.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr1.dis" v-model="tr1.pre0" @input="tr1Customer(e, val)" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" >
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr2.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr2.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr2.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr2.dis" v-model="tr2.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr3.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr3.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr3.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input disabled v-model="tr1.pre0 - tr2.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr4.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr4.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr4.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr4.dis" v-model="tr4.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr5.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr5.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr5.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr5.dis" v-model="tr5.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr6.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr6.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr6.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr6.dis" v-model="tr1.pre0 * 0.05" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr7.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr7.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr7.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr7.dis" v-model="tr1.pre0 * 0.05" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr8.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr8.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr8.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr8.dis" v-model="tr8.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr9.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr9.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr9.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr9.dis" v-model="tr9.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr10.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr10.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr10.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr10.dis" v-model="tr1.pre0 * 0.05" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr11.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr11.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr11.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr11.dis" v-model="tr11.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr12.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr12.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr12.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr12.dis" v-model="tr12.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr13.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr13.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr13.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr13.dis" v-model="tr13.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr14.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr14.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr14.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr14.dis" v-model="tr14.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr15.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr15.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr15.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr15.dis" v-model="tr15.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr16.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr16.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr16.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr16.dis" v-model="tr16.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr17.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr17.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr17.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr17.dis" v-model="tr17.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr18.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr18.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr18.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr18.dis" v-model="tr18.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr19.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr19.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr19.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr19.dis" v-model="tr19.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr20.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr20.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr20.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr20.dis" v-model="tr20.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr21.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr21.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr21.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr21.dis" v-model="tr21.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr22.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr22.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr22.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr22.dis" v-model="tr22.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10" style="background-color: antiquewhite">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr23.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr23.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr23.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input :disabled="tr23.dis" v-model="tr23.pre0" /></div></el-col>
+            </el-row>
+            
+            <el-row :gutter="10">
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem" >
+                  {{tr24.name}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr24.else}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  {{tr24.formula}}</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple" style="font-size: 0.8rem; line-height: 1.2rem; margin-bottom: 0.6rem">
+                  <input v-if="false" :disabled="tr24.dis" v-model="tr24.pre0" />{{Math.abs(tr24.pre0)}}</div></el-col>
+            </el-row>
+        </div>
+    </article>
+    <script type="text/javascript" src="static/js/public/jquery.min.js"></script>
+    <script type=text/javascript src="./static/js/public/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script type="text/javascript" src="static/js/index.js"></script>
+</body>
+
+</html>

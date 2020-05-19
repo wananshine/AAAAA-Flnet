@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FLENT</title>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=10,chrome=1">
+    <meta name=google-site-verification content=xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=renderer content="webkit|ie-comp|ie-stand">
+    <meta name=theme-color content="#000000">
+    <meta itemprop=name content="">
+    <meta itemprop=image content="">
+    <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.7.2/skins/default/aliplayer-min.css" />
+    <link href="./static/css/public/reset.css" rel="stylesheet" />
+    <link href="./static/css/public/swiper.min.css" rel="stylesheet" />
+    <link href="./static/css/videoDetail.css" rel="stylesheet" />
+    <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+</head>
+
+<body>
+    <article class="video-detail" id="video-detail">
+        <div style="width: 1200px; margin: 100px auto">
+            <a href="index.html">首页</a>
+            <a href="playSecondary.html">回放二级页面</a>
+            <a href="videoSecondary.html">视频二级页面</a>
+            <a href="livingDetail.html">直播详情页面</a>
+            <a href="playbackDetail.html">回放详情页面</a>
+            <a href="videoDetail.html">视频详情页面</a>
+        </div>
+        <section class="living-layer">
+            <div class="living-grid">
+                <div class="lg-left">
+                    <h3 class="anchor-title">
+                        <i class="anc-tag">视频</i>
+                        <span class="anc-title">大品牌护肤上架送送送</span>
+                    </h3>
+                    <dl class="anchor-group" v-cloak>
+                        <dt class="anc-head-img"><img src="https://img.alicdn.com/bao/uploaded/i8/TB1q16xeHsTMeJjy1zbDAZhlVXa_044728.jpg_250x250Q50s50.jpg_.webp" /></dt>
+                        <dd class="anc-name">
+                            <span class="anc-txt">8kg直播频道</span>
+                            <span class="anc-id">ID:4634</span>
+                        </dd>
+                        <dd class="anc-attention">
+                            <span class="atten-btn" :class='{"atten-already": attentionTxt=="关注" ? false : true }' @click="attenCustomer($event, attentionTxt)" v-cloak>
+                                <i v-cloak>{{attentionTxt}}</i>
+                            </span>
+                        </dd>
+                        <dd class="anc-hot">
+                            <span class="hot-num">1002</span>
+                            <span class="hot-txt">热度</span>
+                        </dd>
+                    </dl>
+                    <!--评论列表-->
+                    <div class="user-review">
+                        <ul class="review-list" id="review-list">
+                            <li class="rev-el" v-for="(review, reviewIndex) in reviewList" :key="reviewIndex" v-cloak>
+                                <div class="rev-bd">
+                                    <div class="rev-user">
+                                        <i class="rev-level">Lv{{review.level}}</i>
+                                        <span class="rev-nick">{{review.user_info.nick}}</span>
+                                    </div>
+                                    <div class="rev-txt">{{review.content}}</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--评论输入框&&按钮-->
+                    <div class="user-btn">
+                        <input class="input-control" v-model="sendInfo" type="text" placeholder="说点什么吧..." @keyup.enter="keyupCustomer($event, sendInfo)">
+                        <button class="send-control" @click="sendCustomer($event, sendInfo)">发送</button>
+                    </div>
+                </div>
+                <div class="lg-center">
+                    <div class="play-video">
+                        <div id="player-con"></div>
+                        <!--
+                            <video class="player-obs" src="./static/video/aliyunmedia.mp4" controls>
+                                <source />
+                            </video>
+                        -->
+                    </div>
+                    <div id="play-like">
+                        <div class="bubble"></div>
+                        <a href="###" class="praises">
+                            <span></span>
+                        </a>
+                    </div>
+                    <!--
+                        <div id="player-praises" style="display: none" data-bk="player-praises">
+                            <div class="bubble"></div>
+                            <a href="###" class="praises"><span></span></a>
+                        </div>
+                    -->
+                    <div class="play-recommend" v-show="isShow === 1" v-cloak>
+                        <!--主播推荐商品弹出框-->
+                        <dl v-show="isShow === 1" class="rec-product" v-cloak>
+                            <dt class="rec-img"><img src="https://img12.360buyimg.com/mobilecms/s455x455_jfs/t21100/293/220591863/126000/303ca4b4/5b04ca76N4c2d4f73.jpg!q70.dpg.webp" /></dt>
+                            <dd class="rec-group">
+                                <p class="rec-name">了关键是贵金属价格顺丰控股颇尔</p>
+                                <p class="rec-price">￥300.23</p>
+                                <p class="rec-oldprice">原价:<s>￥308.23</s></p>
+                                <p class="rec-cart" @click="addcartCustomer(' 308.23',$event)">加入购物车</p>
+                            </dd>
+
+                        </dl>
+
+                        <!--更多商品弹出框&&包括登录注册按钮-->
+                        <div v-show="isShow === 2" class="rec-more" v-cloak>
+                            <div class="rec-title">更多商品供您选择</div>
+                            <div class="rec-btn">
+                                <button>登录</button>
+                                <button>注册</button>
+                            </div>
+                            <div class="pt-list">
+                                <figure class="pt-el">
+                                    <figcaption class="pt-img">
+                                        <img src="https://img12.360buyimg.com/mobilecms/s455x455_jfs/t21100/293/220591863/126000/303ca4b4/5b04ca76N4c2d4f73.jpg!q70.dpg.webp" />
+                                    </figcaption>
+                                    <p class="pt-price">￥2359.26</p>
+                                </figure>
+                                <figure class="pt-el">
+                                    <figcaption class="pt-img">
+                                        <img src="https://img12.360buyimg.com/mobilecms/s455x455_jfs/t21100/293/220591863/126000/303ca4b4/5b04ca76N4c2d4f73.jpg!q70.dpg.webp" />
+                                    </figcaption>
+                                    <p class="pt-price">￥2359.26</p>
+                                </figure>
+                                <figure class="pt-el">
+                                    <figcaption class="pt-img">
+                                        <img src="https://img12.360buyimg.com/mobilecms/s455x455_jfs/t21100/293/220591863/126000/303ca4b4/5b04ca76N4c2d4f73.jpg!q70.dpg.webp" />
+                                    </figcaption>
+                                    <p class="pt-price">￥2359.26</p>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <!--关闭弹出框按钮-->
+                        <a class="rec-close" @click="closeCustomer($event)">X</a>
+                    </div>
+
+                </div>
+                <div class="lg-right">
+                    <h5 class="lg-r-title" v-cloak>全部宝贝( {{products.length}} )</h5>
+                    <ul class="product-list" v-cloak>
+                        <li class="pt-el" v-for="(pt, ptIndex) in products" :key="ptIndex" v-cloak>
+                            <div class="pt-index">{{ptIndex + 1}}</div>
+                            <div class="pt-group">
+                                <div class="pt-img"><img :src="pt.src" /></div>
+                                <div class="pt-d">
+                                    <p class="pt-name">{{pt.name}}</p>
+                                    <p class="pt-price">￥{{pt.price}}</p>
+                                    <p class="pt-delprice">原价: <s>￥{{pt.delprice}}</s></p>
+                                    <p class="pt-cart" @click="addcartCustomer(pt, $event)"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="playback-grid">
+                <h3 class="play-title">TA的回放</h3>
+                <!-- Swiper -->
+                <div class="swiper-container">
+                    <ul class="play-list swiper-wrapper">
+                        <li class="play-el swiper-slide" v-for="(play, playIndex) in playList" :key="playIndex" v-cloak>
+                            <div class="play-cover"><img :src="play.src"></div>
+                            <div class="play-group">
+                                <div class="play-time">{{play.time}}</div>
+                                <div class="play-name">{{play.name}}</div>
+                                <div class="play-watch">{{play.watch}}观看</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Add Pagination -->
+                    <!--<div class="swiper-pagination"></div>-->
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <div class="wonderful-grid">
+                <h3 class="play-title">精彩回放</h3>
+                <div class="play-list">
+                    <dl class="play-el" v-for="(video, videoIndex) in hotPlayer" :key="videoIndex" v-cloak>
+                        <dt class="el-watch">
+                            <!--:style="{backgroundImage:'url(' + video.src + ')'}"-->
+                            <a class="watch-link" >
+                                <img :src="video.src" />
+                            </a>
+                            <i class="watch-num" v-show="false">{{video.watch}}点击</i>
+                            <i class="watch-name">{{video.name}}</i>
+                            <p class="watch-icon"></p>
+                            <p class="watch-mask"></p>
+                        </dt>
+                        <dd class="el-wrap">
+                            <h4 class="el-title">商品推荐</h4>
+                            <div class="el-goods">
+                                <!-- Swiper -->
+                                <div class="swiper-container2">
+                                    <div class="swiper-wrapper">
+                                        <div class="el-cell swiper-slide" v-for="(product, productIndex) in video.goods" :key="productIndex">
+                                            <a class="cell-sku">
+                                                <div class="sku-img"><img :src="product.img" /></div>
+                                                <div class="sku-name">{{product.name}}</div>
+                                                <div class="sku-price">￥3221.23</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Add Pagination -->
+                                    <!--<div class="swiper-pagination"></div>-->
+                                    <!--左箭头-->
+                                    <div class="swiper-button-prev"></div>
+                                    <!--右箭头-->
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+    </article>
+    <script type="text/javascript" src="static/js/public/jquery.min.js"></script>
+    <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+    <script type="text/javascript" src="static/js/public/swiper.min.js"></script>
+    <script type=text/javascript src="./static/js/public/vue.js"></script>
+    <script type="text/javascript" src="static/js/videoDetail.js"></script>
+</body>
+
+</html>

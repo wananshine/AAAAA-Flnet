@@ -1,0 +1,331 @@
+// "out": true, "compress": true
+@import (reference) url(./base.less);
+[v-cloak] {
+    display: none;
+}
+
+.order-panel {
+    .all;
+    .order-inner{
+        width: @width;
+        margin: auto;
+        .logo-img{
+            height: 60px;
+            line-height: 68px;
+            padding: 50px 0px 28px;
+            font-size: 14px;
+            img{ float: left; margin-right: 10px; }
+        }
+        .order-show{
+            .all;
+            .order-card{
+                // border-radius: 4px;
+                // border: 1px solid #e8e8e8;
+                border: 1px solid #ebeef5;
+                background-color: #fff;
+                overflow: hidden;
+                color: #303133;
+                transition: .3s;
+                .card-header{
+                    padding: 18px 20px;
+                    border-bottom: 1px solid #ebeef5;
+                    box-sizing: border-box;
+                    background-color: rgba(228, 228, 228, 1);
+                }
+                .card-body{
+                    padding: 20px;
+                    //收货信息
+                    .form-horizontal{
+                        margin: 20px auto;
+                        font-size: 0px;
+                        text-align: center;
+                        .form-group{
+                            display: inline-block;
+                            width: 30%;
+                            label{ font-size: 14px; }
+                            input{
+                                text-align: left;
+                                -webkit-box-sizing: border-box;
+                                box-sizing: border-box;
+                                margin: 0;
+                                padding: 0;
+                                font-variant: tabular-nums;
+                                list-style: none;
+                                -webkit-font-feature-settings: 'tnum';
+                                font-feature-settings: 'tnum';
+                                position: relative;
+                                display: inline-block;
+                                width: 70%;
+                                height: 32px;
+                                padding: 4px 11px;
+                                color: rgba(0,0,0,0.65);
+                                font-size: 14px;
+                                line-height: 1.5;
+                                background-color: #fff;
+                                background-image: none;
+                                border: 1px solid #d9d9d9;
+                                border-radius: 4px;
+                                -webkit-transition: all .3s;
+                                transition: all .3s;
+                                outline: none;
+                                &:hover,
+                                &:focus{
+                                    border-color: #1890ff;
+                                }
+                            }
+                        }
+                        .form-addr{
+                            width: 40%;
+                        }
+                        .form-btn{
+                            margin: 42px auto 0px;
+                            button{
+                                width: 85px;
+                                line-height: 1.499;
+                                position: relative;
+                                letter-spacing: 5px;
+                                display: inline-block;
+                                font-weight: 400;
+                                white-space: nowrap;
+                                text-align: center;
+                                background-image: none;
+                                border: 1px solid #1890ff;
+                                -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+                                box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+                                cursor: pointer;
+                                -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+                                transition: all .3s cubic-bezier(.645, .045, .355, 1);
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                -ms-touch-action: manipulation;
+                                touch-action: manipulation;
+                                height: 32px;
+                                padding: 0 15px;
+                                font-size: 14px;
+                                border-radius: 4px;
+                                color: #fff;
+                                background-color: #1890ff;
+                                text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+                                -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+                                box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+                            }
+                        }
+                    }
+
+                    //支付方式
+                    .pay-way{
+                        position: relative;
+                        font-size: 0px;
+                        .pay-cell{
+                            padding: 12px 0px 12px 43px;
+                            position: relative;
+                            width: 166px;
+                            display: inline-block;
+                            background-position: 56px center;
+                            background-repeat: no-repeat;
+                            background-size: 162px 58px;
+                            cursor: pointer;
+                            // input{vertical-align: middle;}
+                        }
+                        .pay-aliPay{
+                            background-image: url("../img/pay_alipay.png");
+                        }
+                        .pay-wechatPay{
+                            background-image: url("../img/pay_wechatpay.png");
+                        }
+                    }
+
+                    //发票信息
+                    .invoice-information{
+                        padding: 20px;
+                        font-size: 14px;
+                        button{
+                            width: 85px;
+                            line-height: 1.499;
+                            position: relative;
+                            letter-spacing: 5px;
+                            display: inline-block;
+                            font-weight: 400;
+                            white-space: nowrap;
+                            text-align: center;
+                            background-image: none;
+                            border: 1px solid #1890ff;
+                            -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+                            box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+                            cursor: pointer;
+                            -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+                            transition: all .3s cubic-bezier(.645, .045, .355, 1);
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                            -ms-touch-action: manipulation;
+                            touch-action: manipulation;
+                            height: 32px;
+                            padding: 0 15px;
+                            font-size: 14px;
+                            border-radius: 4px;
+                            color: #fff;
+                            background-color: #1890ff;
+                            text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+                            -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+                            box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+                        }
+                    }
+
+                    //商品清单
+                    .productt-information{
+                        font-size: 14px;
+                        .pt-table{
+                            .all;
+                            border: 1px solid #e8e8e8;
+                            .pt-thead{
+                                .pt-tr{
+                                    position: relative;
+                                    background-color: aliceblue;
+                                    th{
+                                        position: relative;
+                                        padding: 16px 0px 16px 10px;
+                                        background: #fafafa;
+                                        border-bottom: 1px solid #e8e8e8;
+                                        &:nth-of-type(1){
+                                            width: 8%;
+                                        }
+                                        &:nth-of-type(2){
+                                            width: 42%;
+                                            text-align: left;
+                                        }
+                                        &:nth-of-type(3){
+                                            width: 10%;
+                                        }
+                                        &:nth-of-type(4){
+                                            width: 10%;
+                                        }
+                                        &:nth-of-type(5){
+                                            width: 10%;
+                                        }
+                                    }
+                                }
+                            }
+                            .pt-tbody{
+                                .pt-row{
+                                    border-bottom: 1px solid #e8e8e8;
+                                    td{
+                                        padding: 16px 0px 16px 10px;
+                                        box-sizing: border-box;
+                                        vertical-align: top;
+                                    }
+                                    .pt-img{
+                                        .img{
+                                            width: 100px;
+                                            height: 100px;
+                                            // margin: auto;
+                                            img{
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                    .pt-name{
+                                        .pt-txt{
+                                            line-height: 18px;
+                                            color: rgba(0, 0, 0, 0.7);
+                                            .clamp2;
+                                        }
+                                        .pt-attr{
+                                            color: #999;
+                                            margin-top: 12px;
+                                            display: inline-block;
+                                            background-color: #e5e5e5;
+                                            padding: 4px 10px;
+                                        }
+                                    }
+                                    .pt-sale-price{
+                                        text-align: center;
+                                    }
+                                    .pt-amount{
+                                        position: relative;
+                                        text-align: center;
+                                    }
+                                    .pt-total-price{
+                                        font-weight: 600;
+                                        color: #ff2b36;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    //结算信息
+                    .pay-money{
+                        padding: 20px;
+                        text-align: right;
+                        font-size: 14px;
+                        line-height: 26px;
+                        .pt-money{
+                            span{color:#ff2b36;}
+                        }
+                        .total-money{
+                            span{color:#ff2b36;}
+                        }
+                    }
+
+                    .pay-info{
+                        text-align: right;
+                        font-size: 14px;
+                        line-height: 26px;
+                        .money{
+                            strong{
+                                margin-left: 10px;
+                                font-size: 28px;
+                                font-weight: bold;
+                                color: #ff272d;
+                            }
+                        }
+                        .addr{
+                            color: #999999;
+                        }
+                        .pay-btn{
+                            a{
+                                margin-right: 10px;
+                                color:#999999;
+                            }
+                            button{
+                                height: 32px;
+                                line-height: 1.499;
+                                position: relative;
+                                letter-spacing: 2px;
+                                display: inline-block;
+                                font-weight: 400;
+                                white-space: nowrap;
+                                text-align: center;
+                                border: 1px solid #ff272d;
+                                -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+                                box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+                                cursor: pointer;
+                                -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+                                transition: all .3s cubic-bezier(.645, .045, .355, 1);
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                -ms-touch-action: manipulation;
+                                touch-action: manipulation;
+                                padding: 0 15px;
+                                font-size: 14px;
+                                border-radius: 4px;
+                                color: #fff;
+                                background-color: #ff272d;
+                                text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+                                -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+                                box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

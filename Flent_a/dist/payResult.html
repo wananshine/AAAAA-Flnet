@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>微信支付</title>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=10,chrome=1">
+    <meta name=google-site-verification content=xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=renderer content="webkit|ie-comp|ie-stand">
+    <meta name=theme-color content="#000000">
+    <meta itemprop=name content="">
+    <meta itemprop=image content="">
+    <link href="./static/css/public/reset.css" rel="stylesheet" />
+    <link href="./static/css/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/payResult.css">
+</head>
+
+<body>
+<div id="container">
+    <div class="result-header">
+        <div class="left">
+            <!--付款成功图标-->
+            <!--<img src="static/img/u132.png">-->
+
+            <!--付款失败图标-->
+            <img src="static/img/u213.png">
+        </div>
+        <div class="right">
+
+            <!--付款成功信息-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<p class="success">支付成功！</p>-->
+                    <!--<p class="order">订单：<span>99190404213234777</span></p>-->
+                    <!--<p class="sum">已付金额：<span>￥4500.00</span></p>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<p>重要提示：富连网不会以订单异常、系统升级等问题为由，要求您点击任何链接进行退款，富连网官方唯一指定外拨显示号码为0755-29846755，慎防假冒客服电话诈骗！-->
+                    <!--</p>-->
+                <!--</li>-->
+            <!--</ul>-->
+
+            <!--付款失败信息-->
+            <ul>
+                <li>
+                    <p class="failed">付款失败！</p>
+                    <p class="order">订单：<span>99190404213234777</span></p>
+                    <p class="sum">待付金额：<span>￥4500.00</span></p>
+                </li>
+                <li>
+                    <p>重要提示：富连网不会以订单异常、系统升级等问题为由，要求您点击任何链接进行退款，富连网官方唯一指定外拨显示号码为0755-29846755，慎防假冒客服电话诈骗！
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="result-content">
+        <table class="order-info">
+            <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>订单金额</th>
+                    <th>订单商品数量</th>
+                    <th>商品名称</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="order-number">89190404213234777</td>
+                    <td class="order-price">￥4500.00</td>
+                    <td class="order-amount">1</td>
+                    <td class="order-goodsName">诺基亚(NOKIA) 7 Plus 移动联通电信4G手机 全网通 双卡双待</td>
+                </tr>
+                <tr>
+                    <td class="order-number">89190404213234777</td>
+                    <td class="order-price">￥4500.00</td>
+                    <td class="order-amount">1</td>
+                    <td class="order-goodsName">TCL 60A730U 60英寸 30核人工智能电视 纤薄金属机身HDR4K液晶电视 锖色 全国联保</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="result-bottom">
+        <a href=".cart.html" class="back">返回购物车</a>
+    </div>
+</div>
+<script type="text/javascript" src="static/js/public/jquery.min.js"></script>
+<script type=text/javascript src="./static/js/public/vue.js"></script>
+<script type="text/javascript" src="static/js/index.js"></script>
+</body>
+</html>

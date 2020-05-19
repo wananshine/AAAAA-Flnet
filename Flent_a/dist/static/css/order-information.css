@@ -1,0 +1,462 @@
+[v-cloak] {
+  display: none;
+}
+.order-panel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.order-panel .order-inner {
+  width: 1200px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.order-panel .order-inner .logo-img {
+  height: 60px;
+  line-height: 68px;
+  padding: 50px 0px 28px;
+  font-size: 14px;
+}
+.order-panel .order-inner .logo-img img {
+  float: left;
+  margin-right: 10px;
+}
+.order-panel .order-inner .order-show {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.order-panel .order-inner .order-show .order-card {
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  overflow: hidden;
+  color: #303133;
+  transition: .3s;
+}
+.order-panel .order-inner .order-show .order-card .card-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #ebeef5;
+  box-sizing: border-box;
+  background-color: #e4e4e4;
+}
+.order-panel .order-inner .order-show .order-card .card-body {
+  padding: 20px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal {
+  margin: 20px auto;
+  font-size: 0px;
+  text-align: center;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-group {
+  display: inline-block;
+  width: 30%;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-group label {
+  font-size: 14px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-group input {
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  height: 32px;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline: none;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-group input:hover,
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-group input:focus {
+  border-color: #1890ff;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-addr {
+  width: 40%;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-btn {
+  margin: 42px auto 0px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .form-horizontal .form-btn button {
+  width: 85px;
+  line-height: 1.499;
+  position: relative;
+  letter-spacing: 5px;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  border: 1px solid #1890ff;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #1890ff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-way {
+  position: relative;
+  font-size: 0px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-way .pay-cell {
+  padding: 12px 0px 12px 43px;
+  position: relative;
+  width: 166px;
+  display: inline-block;
+  background-position: 56px center;
+  background-repeat: no-repeat;
+  background-size: 162px 58px;
+  cursor: pointer;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-way .pay-aliPay {
+  background-image: url("../img/pay_alipay.png");
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-way .pay-wechatPay {
+  background-image: url("../img/pay_wechatpay.png");
+}
+.order-panel .order-inner .order-show .order-card .card-body .invoice-information {
+  padding: 20px;
+  font-size: 14px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .invoice-information button {
+  width: 85px;
+  line-height: 1.499;
+  position: relative;
+  letter-spacing: 5px;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  border: 1px solid #1890ff;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #1890ff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information {
+  font-size: 14px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-thead .pt-tr {
+  position: relative;
+  background-color: aliceblue;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-thead .pt-tr th {
+  position: relative;
+  padding: 16px 0px 16px 10px;
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-thead .pt-tr th:nth-of-type(1) {
+  width: 8%;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-thead .pt-tr th:nth-of-type(2) {
+  width: 42%;
+  text-align: left;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-thead .pt-tr th:nth-of-type(3) {
+  width: 10%;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-thead .pt-tr th:nth-of-type(4) {
+  width: 10%;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-thead .pt-tr th:nth-of-type(5) {
+  width: 10%;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row {
+  border-bottom: 1px solid #e8e8e8;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row td {
+  padding: 16px 0px 16px 10px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row .pt-img .img {
+  width: 100px;
+  height: 100px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row .pt-img .img img {
+  width: 100%;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row .pt-name .pt-txt {
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row .pt-name .pt-attr {
+  color: #999;
+  margin-top: 12px;
+  display: inline-block;
+  background-color: #e5e5e5;
+  padding: 4px 10px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row .pt-sale-price {
+  text-align: center;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row .pt-amount {
+  position: relative;
+  text-align: center;
+}
+.order-panel .order-inner .order-show .order-card .card-body .productt-information .pt-table .pt-tbody .pt-row .pt-total-price {
+  font-weight: 600;
+  color: #ff2b36;
+  text-align: center;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-money {
+  padding: 20px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 26px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-money .pt-money span {
+  color: #ff2b36;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-money .total-money span {
+  color: #ff2b36;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-info {
+  text-align: right;
+  font-size: 14px;
+  line-height: 26px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-info .money strong {
+  margin-left: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff272d;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-info .addr {
+  color: #999999;
+  padding: 8px 0px;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-info .pay-btn a {
+  margin-right: 10px;
+  color: #999999;
+}
+.order-panel .order-inner .order-show .order-card .card-body .pay-info .pay-btn .submit-order {
+  height: 32px;
+  line-height: 32px;
+  position: relative;
+  letter-spacing: 0px;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid #ff272d;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #ff272d;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  text-decoration: none;
+}
+.order-panel .order-inner .invoice-modal {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.order-panel .order-inner .invoice-modal .modal-inner {
+  min-width: 500px;
+  width: 38%;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  font-size: 14px;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .modal-header {
+  font-size: 16px;
+  padding: 16px 24px;
+  color: rgba(0, 0, 0, 0.65);
+  background: #f3f3f3;
+  border-bottom: 1px solid #e8e8e8;
+  border-radius: 4px 4px 0 0;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .modal-header .icon {
+  float: right;
+  transform: scaleX(1.3);
+  cursor: pointer;
+  padding: 5px;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .modal-body {
+  padding: 25px 35px;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .modal-body .tips {
+  margin: 20px 0px;
+  padding: 20px;
+  background-color: #ffeded;
+  color: #f00;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .modal-body .tips p {
+  line-height: 20px;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-btn {
+  display: inline-block;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-btn button {
+  outline: none;
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+  border-color: #d9d9d9;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .btn-active {
+  background-color: #eaf4ff;
+  color: #1f77d0;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .form-act {
+  padding: 10px 74px;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .form-act .input-control,
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .form-act .input-number {
+  position: relative;
+  margin-top: 10px;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .form-act .input-control input,
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .form-act .input-number input {
+  outline: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 32px;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .form-act .input-number {
+  display: none;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-title .form-act .input-number:before {
+  content: '纳税人识别号:';
+  position: absolute;
+  left: -83px;
+  top: 8px;
+  font-size: 12px;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-submit {
+  text-align: center;
+  display: block;
+}
+.order-panel .order-inner .invoice-modal .modal-inner .invoice-submit button {
+  background-color: #40a9ff;
+  color: #fff;
+}

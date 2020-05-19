@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+  <!DOCTYPE html>
+  <html lang="zxx" class="no-js">
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="../static/js/gtag.id.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=" + GTAG_ID></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', GTAG_ID);
+</script>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../static/img/fav.png?v=2">
+    <!-- Author Meta -->
+    <meta name="author" content="ibdo.foxconn.com">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>人工智慧 互動平台(創作 AI)</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+      <!--
+      CSS
+      ============================================= -->
+      <link rel="stylesheet" href="../static/css/linearicons.css">
+      <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../static/css/bootstrap.css">
+      <link rel="stylesheet" href="../static/css/magnific-popup.css">
+      <link rel="stylesheet" href="../static/css/nice-select.css">
+      <link rel="stylesheet" href="../static/css/hexagons.min.css">
+      <link rel="stylesheet" href="../static/css/animate.min.css">
+      <link rel="stylesheet" href="../static/css/owl.carousel.css">
+      <link rel="stylesheet" href="../static/css/gan-slide.css">
+      <link rel="stylesheet" href="../static/css/gan.css">
+    </head>
+    <body>
+        <header id="header" id="home">
+          <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+              <div id="logo">
+                <a href=".."><img src="../static/img/aiix.logo.png" alt="" title="" /></a>
+              </div>
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                  <li class="menu-active"><a href="..">首頁</a></li>
+                  <li class="menu-active"><a href="../cnn/vgg19/cifar10/home/index">圖像辨識</a></li>
+                  <li class="menu-active"><a href="../rnn/lstm/5455945/home/index">自然語言處理</a></li>
+                  <li class="menu-active"><a href="../gan/stylegan/ffhq/home/index">創作 AI</a></li>
+                  <li class="menu-active"><a href="../audio/index">語音辨識</a></li>
+                  <li class="menu-active"><a href="../discover/index">知識發現</a></li>
+                  <li class="menu-active"><a href="..">聯絡我們</a></li>
+                </ul>
+              </nav><!-- #nav-menu-container -->
+            </div>
+          </div>
+        </header><!-- #header -->
+
+      <!-- start banner Area -->
+      <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+          <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+              <h1>創作 AI</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End banner Area -->
+
+      <!-- Start about-video Area -->
+      <section class="about-video-area section-gap">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 about-video-left">
+              <!-- <h6 class="text-uppercase">上標口號</h6> -->
+              <h1>源源不絕的創造力：創作 AI</h1>
+              <!--<p> <span>副標說明</span> </p>-->
+              <p>
+生成模型的目標是「創作」，經由調控給定的條件資訊數值，讓類神經網路產生對應的結果，條件資訊的強度也會造成生成結果對應條件的反應程度以藉此產生出訓練資料中沒有出現過的資料。而現今在機器學習領域中最火紅的生成模型「生成對抗網路」(Generative Adversarial Network，簡稱GAN)，能夠生成幾可亂真的資料。 請大家藉由不同數字的調控，動手操作看看當今最HOT的生成對抗網路(GAN)以找出圖片中的所隱藏的秘密吧~
+              </p>
+            </div>
+            <div class="col-lg-6 about-video-right justify-content-center align-items-center d-flex relative">
+              <div class="overlay overlay-bg"></div>
+              <a><img class="img-fluid mx-auto" src="../static/img/covers/gan.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End about-video Area -->
+
+      <!-- Start predict Area -->
+      <section class="predict-area section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 predict-area-left">
+              <div class="range range-primary">
+                <input type="range" name="range1" min="1" max="10" value="1" onchange="range1.value=value">
+                <output id="range1">1</output>
+              </div>
+              <div class="range range-success">
+                <input type="range" name="range2" min="1" max="10" value="3" onchange="range2.value=value">
+                <output id="range2">3</output>
+              </div>
+              <div class="range range-info">
+                <input type="range" name="range3" min="1" max="10" value="5" onchange="range3.value=value">
+                <output id="range3">5</output>
+              </div>
+              <div class="range range-warning">
+                <input type="range" name="range4" min="1" max="10" value="7" onchange="range4.value=value">
+                <output id="range4">7</output>
+              </div>
+              <div class="range range-danger">
+                <input type="range" name="range5" min="1" max="10" value="9" onchange="range5.value=value">
+                <output id="range5">9</output>
+              </div>
+              <br />
+              <a id="action-generate" class="genric-btn success-border circle arrow">換一張<span class="lnr lnr-arrow-right"></span></a>
+            </div>
+            <div class="col-lg-6 predict-area-right">
+                <div class="thumb">
+                  <img class="img-fluid" src="" alt="" id='action-target-img'>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <a id="pagetype" hidden><%= pagetype %></a>
+      <a id="pageparam" hidden><%= pageparam %></a>
+      <!-- End predict Are -->
+
+
+      <!-- start footer Area -->
+      <footer class="footer-area">
+        <div class="container">
+          <div class="row footer-bottom d-flex justify-content-between">
+            <p class="col-lg-8 col-sm-12 footer-text m-0 text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Foxconn &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer Area -->
+
+      <script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
+      <script src="../static/js/vendor/bootstrap.min.js"></script>
+      <script src="../static/js/vendor/superfish.min.js"></script>
+      <script src="../static/js/gan/main.js"></script>
+      <script src="../static/js/gan/action.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FLENT</title>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=10,chrome=1">
+    <meta name=google-site-verification content=xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=renderer content="webkit|ie-comp|ie-stand">
+    <meta name=theme-color content="#000000">
+    <meta itemprop=name content="">
+    <meta itemprop=image content="">
+    <link href="./static/css/public/reset.css" rel="stylesheet" />
+    <link href="./static/css/order-information.css" rel="stylesheet" />
+</head>
+
+<body>
+    <article class="order-panel" id="order-panel">
+        <div class="order-inner">
+            <div class="logo-img">
+                <img src="./static/img/flent_logo.png" />
+                <sub>订单信息</sub>
+            </div>
+            <section class="order-show">
+
+                <!-- 收货信息 -->
+                <div class="order-card">
+                    <div class="card-header">
+                        <span>收货信息</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-horizontal">
+                            <div class="form-group form-name">
+                                <label>收货人：</label>
+                                <input type="text" required />
+                            </div>
+                            <div class="form-group form-tel">
+                                <label>收货人：</label>
+                                <input type="number" required />
+                            </div>
+                            <div class="form-group form-addr">
+                                <label>收货人：</label>
+                                <input disabled="disabled"  value="广东省深圳市龙华新区东环二路富士康D12" />
+                            </div>
+                            <div class="form-btn">
+                                <button>确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 支付方式 -->
+                <div class="order-card">
+                    <div class="card-header">
+                        <span>支付方式</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="pay-way">
+                            <label class="pay-cell pay-aliPay">
+                                <input type="radio" name="pay" value="aliPay">
+                            </label>
+                            <label class="pay-cell pay-wechatPay" value="wechatPay">
+                                <input type="radio" name="pay" value="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 发票信息 -->
+                <div class="order-card">
+                    <div class="card-header">
+                        <span>发票信息</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="invoice-information">
+                            电子发票（个人） <button onClick="invoiceModal()" id="invoice_action">修改</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品清单 -->
+                <div class="order-card">
+                    <div class="card-header">
+                        <span>商品清单</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="productt-information">
+                            <table class="pt-table">
+                                <thead class="pt-thead">
+                                    <tr class="pt-tr">
+                                        <th></th>
+                                        <th>商品</th>
+                                        <th>销售价</th>
+                                        <th>数量</th>
+                                        <th>小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="pt-tbody">
+                                    <tr class="pt-row">
+                                        <td class="pt-img">
+                                            <div class="img"><img src="https://img.alicdn.com/bao/uploaded/TB1aliVfj7nBKNjSZLeL6TxCFXa_80x80.jpg"></div>
+                                        </td>
+                                        <td class="pt-name">
+                                            <div class="pt-txt">UOOHE短袖男翻领polo衫 夏季新款潮牌简约印花纯棉黑色青年保罗衫UOOHE短袖男翻领polo衫 夏季新款潮牌简约印花纯棉黑色青年保罗衫UOOHE短袖男翻领polo衫 夏季新款潮牌简约印花纯棉黑色青年保罗衫</div>
+                                            <div class="pt-attr">白色 4GB+64GB</div>
+                                        </td>
+                                        <td class="pt-sale-price">¥<span>1399.00</span></td>
+                                        <td class="pt-amount">555</td>
+                                        <td class="pt-total-price">¥<span>1399.00</span></td>
+                                    </tr>
+
+                                    <tr class="pt-row">
+                                        <td class="pt-img">
+                                            <div class="img"><img src="https://img.alicdn.com/bao/uploaded/TB1aliVfj7nBKNjSZLeL6TxCFXa_80x80.jpg"></div>
+                                        </td>
+                                        <td class="pt-name">
+                                            <div class="pt-txt">UOOHE短袖男翻领polo衫 夏季新款潮牌简约印花纯棉黑色青年保罗衫UOOHE短袖男翻领polo衫 夏季新款潮牌简约印花纯棉黑色青年保罗衫UOOHE短袖男翻领polo衫 夏季新款潮牌简约印花纯棉黑色青年保罗衫</div>
+                                            <div class="pt-attr">白色 4GB+64GB</div>
+                                        </td>
+                                        <td class="pt-sale-price">¥<span>1399.00</span></td>
+                                        <td class="pt-amount">555</td>
+                                        <td class="pt-total-price">¥<span>1399.00</span></td>
+                                    </tr>
+
+                                    <tr class="pt-row">
+                                        <td class="pt-img">
+                                            <div class="img"><img src="https://img.alicdn.com/bao/uploaded/TB1aliVfj7nBKNjSZLeL6TxCFXa_80x80.jpg"></div>
+                                        </td>
+                                        <td class="pt-name">
+                                            <div class="pt-txt">约印花纯棉黑色青年保罗衫UOOHE短袖男翻领polo衫牌简约印花纯棉黑色青年保罗衫</div>
+                                            <div class="pt-attr">白色 4GB+64GB</div>
+                                        </td>
+                                        <td class="pt-sale-price">¥<span>1399.00</span></td>
+                                        <td class="pt-amount">555</td>
+                                        <td class="pt-total-price">¥<span>1399.00</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 结算信息 -->
+                <div class="order-card">
+                    <div class="card-header">
+                        <span>结算信息</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="pay-money">
+                            <div class="pt-money">商品总金额：<span>¥4197.00</span></div>
+                            <div class="total-money">总金额：<span>¥4197.00</span></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="pay-info">
+                            <div class="money">应付总额:<strong>¥4197.00</strong></div>
+                            <div class="addr">送至:   高  13410833639   广东省深圳市龙华新区东环二路富士康D12</div>
+                            <div class="pay-btn">
+                                <a href="./cart.html">返回购物车</a>
+                                <a class="submit-order" href="./weChatPay.html">提交订单</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- 发票弹窗 -->
+            <aside class="invoice-modal" id="invoice-modal">
+                <div class="modal-inner">
+                    <div class="modal-header">
+                        发票信息
+                        <i class="icon" onClick="invoiceModalClose()">&#935;</i>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="invoice-btn">
+                            <button>电子发票</button>
+                        </div>
+                        <div class="tips">
+                            <p>1.电子发票与纸质发票具备同等法律效力，可作为用户维权、保修的有效凭据；</p>
+                            <p>2.请确保开票抬头的准确性，开票成功后无法修改。</p>
+                            <p>3.发票的开票金额不包括积分，账户余额，体验卡，代金卡，优惠券支付和礼品卡支付部分。</p>
+                        </div>
+                        <div class="invoice-title">
+                            发票抬头：
+                            <div class="invoice-btn">
+                                <button onClick="isActive(event, '0')" class="btn-active">个人</button>
+                                <button onClick="isActive(event, '1')">单位</button>
+                            </div>
+                            <div class="form-act">
+                                <div class="input-control">
+                                    <input type="text" />
+                                </div>
+                                <div class="input-number" id="input-number">
+                                    <input type="text" placeholder="开企业抬头发票须填写纳税人识别号，以免影响报销" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoice-btn invoice-submit">
+                        <button>保存</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </article>
+    <script type="text/javascript" src="static/js/public/jquery.min.js"></script>
+    <script type=text/javascript src="./static/js/public/vue.js"></script>
+    <script type="text/javascript" src="static/js/order-information.js"></script>
+</body>
+<script>
+    function invoiceModal(){
+        document.getElementById("invoice-modal").style.display="block"
+    }
+    function invoiceModalClose(){
+        document.getElementById("invoice-modal").style.display="none"
+    }
+    function isActive(e, idx){
+        const type = idx;
+        const children = [...e.currentTarget.parentNode.children];
+        children.forEach((v,i)=>{
+            v.className = "";
+        })
+        e.currentTarget.className = "btn-active";
+        switch(type){
+            case '0':
+                document.getElementById("input-number").style.display="none"
+            break;
+            case '1':
+                document.getElementById("input-number").style.display="block"
+            break;
+        }
+    }
+    // document.getElementById('invoice_action').click()
+</script>
+
+</html>

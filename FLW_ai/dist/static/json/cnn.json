@@ -1,0 +1,202 @@
+{
+  "airplane": {
+    "alt": "飛機",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-airplane-1.jpg",
+        "image_url": "/files/examples/img-airplane-1.jpg",
+        "results": [ 100, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-airplane-2.jpg",
+        "image_url": "/files/examples/img-airplane-2.jpg",
+        "results": [ 100, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-airplane-3.jpg",
+        "image_url": "/files/examples/img-airplane-3.jpg",
+        "results": [ 100, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+      }
+    ]
+  },
+  "automobile": {
+    "alt": "汽車",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-automobile-1.jpg",
+        "image_url": "/files/examples/img-automobile-1.jpg",
+        "results": [ 0, 100, 0, 0, 0, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-automobile-2.jpg",
+        "image_url": "/files/examples/img-automobile-2.jpg",
+        "results": [ 0, 99, 0, 0, 0, 0, 0, 0, 1, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-automobile-3.jpg",
+        "image_url": "/files/examples/img-automobile-3.jpg",
+        "results": [ 0, 99, 0, 0, 0, 0, 0, 0, 1, 0 ]
+      }
+    ]
+  },
+  "bird": {
+    "alt": "鳥",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-bird-1.jpg",
+        "image_url": "/files/examples/img-bird-1.jpg",
+        "results": [ 0, 0, 100, 0, 0, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-bird-2.jpg",
+        "image_url": "/files/examples/img-bird-2.jpg",
+        "results": [ 0, 0, 100, 0, 0, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-bird-3.jpg",
+        "image_url": "/files/examples/img-bird-3.jpg",
+        "results": [ 0, 0, 100, 0, 0, 0, 0, 0, 0, 0 ]
+      }
+    ]
+  },
+  "cat": {
+    "alt": "貓",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-cat-1.jpg",
+        "image_url": "/files/examples/img-cat-1.jpg",
+        "results": [ 0, 0, 0, 100, 0, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-cat-2.jpg",
+        "image_url": "/files/examples/img-cat-2.jpg",
+        "results": [ 0, 0, 0, 100, 0, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-cat-3.jpg",
+        "image_url": "/files/examples/img-cat-3.jpg",
+        "results": [ 0, 0, 0, 100, 0, 0, 0, 0, 0, 0 ]
+      }
+    ]
+  },
+  "deer": {
+    "alt": "鹿",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-deer-1.jpg",
+        "image_url": "/files/examples/img-deer-1.jpg",
+        "results": [ 0, 0, 0, 0, 100, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-deer-2.jpg",
+        "image_url": "/files/examples/img-deer-2.jpg",
+        "results": [ 0, 0, 0, 0, 100, 0, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-deer-3.jpg",
+        "image_url": "/files/examples/img-deer-3.jpg",
+        "results": [ 0, 0, 0, 0, 100, 0, 0, 0, 0, 0 ]
+      }
+    ]
+  },
+  "dog": {
+    "alt": "狗",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-dog-1.jpg",
+        "image_url": "/files/examples/img-dog-1.jpg",
+        "results": [ 0, 0, 0, 0, 0, 100, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-dog-2.jpg",
+        "image_url": "/files/examples/img-dog-2.jpg",
+        "results": [ 0, 0, 0, 0, 0, 100, 0, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-dog-3.jpg",
+        "image_url": "/files/examples/img-dog-3.jpg",
+        "results": [ 0, 0, 0, 0, 0, 100, 0, 0, 0, 0 ]
+      }
+    ]
+  },
+  "frog": {
+    "alt": "青蛙",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-frog-1.jpg",
+        "image_url": "/files/examples/img-frog-1.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 100, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-frog-2.jpg",
+        "image_url": "/files/examples/img-frog-2.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 100, 0, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-frog-3.jpg",
+        "image_url": "/files/examples/img-frog-3.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 100, 0, 0, 0 ]
+      }
+    ]
+  },
+  "horse": {
+    "alt": "馬",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-horse-1.jpg",
+        "image_url": "/files/examples/img-horse-1.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 100, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-horse-2.jpg",
+        "image_url": "/files/examples/img-horse-2.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 100, 0, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-horse-3.jpg",
+        "image_url": "/files/examples/img-horse-3.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 100, 0, 0 ]
+      }
+    ]
+  },
+  "ship": {
+    "alt": "船",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-ship-1.jpg",
+        "image_url": "/files/examples/img-ship-1.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 0, 100, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-ship-2.jpg",
+        "image_url": "/files/examples/img-ship-2.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 0, 100, 0 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-ship-3.jpg",
+        "image_url": "/files/examples/img-ship-3.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 0, 100, 0 ]
+      }
+    ]
+  },
+  "truck": {
+    "alt": "卡車",
+    "items": [
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-truck-1.jpg",
+        "image_url": "/files/examples/img-truck-1.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 100 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-truck-2.jpg",
+        "image_url": "/files/examples/img-truck-2.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 100 ]
+      },
+      {
+        "hash_url": "/cnn/vgg19/cifar10/examples/img-truck-3.jpg",
+        "image_url": "/files/examples/img-truck-3.jpg",
+        "results": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 100 ]
+      }
+    ]
+  }
+}

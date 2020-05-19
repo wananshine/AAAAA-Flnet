@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FLENT</title>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=10,chrome=1">
+    <meta name=google-site-verification content=xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=renderer content="webkit|ie-comp|ie-stand">
+    <meta name=theme-color content="#000000">
+    <meta itemprop=name content="">
+    <meta itemprop=image content="">
+    <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.7.2/skins/default/aliplayer-min.css" />
+    <link href="./static/css/public/reset.css" rel="stylesheet" />
+    <!--    <link href="./static/css/public/swiper.min.css" rel="stylesheet" />-->
+    <link href="./static/css/index.css" rel="stylesheet" />
+    <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+</head>
+
+<body>
+    <article class="floor-panel" id="floor-panel">
+        <div class="prism-player" id="player-con"></div>
+        <div style="width: 1200px; margin: 100px auto">
+            <a href="index.html">首页</a>
+            <a href="playSecondary.html">回放二级页面</a>
+            <a href="videoSecondary.html">视频二级页面</a>
+            <a href="livingDetail.html">直播详情页面</a>
+            <a href="playbackDetail.html">回放详情页面</a>
+            <a href="videoDetail.html">视频详情页面</a>
+        </div>
+        <div class="floor-layer">
+            <div class="floor-title">
+                <h2 class="ft-tit">开麦好物</h2>
+                <h3 class="ft-tit">尽享视频乐生活</h3>
+            </div>
+            <div class="floor-content">
+                <div class="fc-item fc-left">
+                    <!--预告-->
+                    <a class="fc-el fc-left-top" :style="{backgroundImage:'url(' + trailer.img + ')'}">
+                        <div class="el-tag">
+                            <i class="el-tag-txt" v-cloak>预告</i>
+                            <span class="el-tag-time" v-cloak>{{trailer.pre_date}}</span>
+                        </div>
+                        <div class="el-name" v-cloak>{{trailer.title}}</div>
+                        <div class="el-mask"></div>
+                    </a>
+                    <!--回放-->
+                    <a class="fc-el fc-left-btm" :href="'playbackDetail.html?id='+playBack.id" :style="{backgroundImage:'url(' + playBack.img + ')'}">
+                        <div class="el-tag">
+                            <i class="el-tag-txt">回放</i>
+                            <!--<span class="el-tag-time">10月2日 14:00</span>-->
+                        </div>
+                        <div class="el-name">{{playBack.title}}</div>
+                        <div class="el-more" @click.stop="linkCustomer('playSecondary.html',$event)">更多></div>
+                        <div class="el-mask"></div>
+                    </a>
+                </div>
+                <div class="fc-item fc-center">
+                    <!--直播中-->
+                    <a class="fc-el fc-living" href="livingDetail.html?id=1232" :style="{backgroundImage:'url(' + trailer.img + ')'}">
+                        <div class="el-tag">
+                            <i class="el-tag-txt">直播中</i>
+                        </div>
+                        <div class="el-name">面膜大战|超级好用的面膜推荐</div>
+                        <div class="el-gradient"></div>
+                    </a>
+                </div>
+                <div class="fc-item fc-right">
+                    <!--视频-->
+                    <a class="fc-el" :class="videoIndex == 0 ? 'fc-right-top':'fc-right-btm'" v-for="(video, videoIndex) in videoArry" :key="videoIndex" :href="'videoDetail.html?id='+video.id" :style="{backgroundImage:'url(' + video.image_url + ')'}">
+                        <div class="el-tag">
+                            <i class="el-tag-txt">视频</i>
+                            <!--<span class="el-tag-time">10月2日 14:00</span>-->
+                        </div>
+                        <div class="el-name">{{video.title}}</div>
+                        <div class="el-more" @click.stop="linkCustomer('videoSecondary.html',$event)">更多></div>
+                        <div class="el-mask"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script type="text/javascript" src="static/js/public/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="static/js/public/swiper.min.js"></script>-->
+    <script type=text/javascript src="./static/js/public/vue.js"></script>
+    <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+    <script type="text/javascript" src="static/js/index.js"></script>
+</body>
+
+</html>

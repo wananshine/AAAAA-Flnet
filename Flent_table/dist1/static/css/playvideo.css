@@ -1,0 +1,201 @@
+[v-cloak] {
+  display: none;
+}
+.playvideo-panel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+  background-color: #eee;
+}
+.playvideo-panel .playback-layer {
+  width: 1200px;
+  margin: auto;
+}
+.playvideo-panel .playback-layer .play-title {
+  font-size: 24px;
+  margin: 26px 0px 24px 0px;
+}
+.playvideo-panel .playback-layer .play-list {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 1215px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.playvideo-panel .playback-layer .play-list .play-el {
+  width: 390px;
+  flex-grow: 0;
+  flex-basis: auto;
+  flex-shrink: 1;
+  background-color: #fff;
+  margin-right: 15px;
+  margin-bottom: 37px;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch .watch-link {
+  height: 100%;
+  display: block;
+  font-size: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition: all 0.5s linear;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch .watch-link img {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+  transition: all 0.5s linear;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch .watch-num {
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  left: 13px;
+  top: 13px;
+  padding: 6px 16px 5px 14px;
+  background-color: #ffc000;
+  border-radius: 13px;
+  z-index: 1;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch .watch-name {
+  width: 60%;
+  position: absolute;
+  left: 14px;
+  bottom: 15px;
+  color: #fff;
+  z-index: 1;
+  letter-spacing: 1px;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch .watch-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch .watch-icon {
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -29px;
+  margin-top: -29px;
+  background-image: url("../img/circle@2x.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.5s linear;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch:hover .watch-link img {
+  transform: scale(1.2);
+  transition: all 0.5s linear;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch:hover .watch-icon {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s linear;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-watch:hover .watch-mask {
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap {
+  padding-bottom: 18px;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-title {
+  font-size: 18px;
+  padding: 0px 12px;
+  position: relative;
+  font-weight: 400;
+  color: #222222;
+  margin: 12px 0px 14px 0px;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .swiper-container {
+  padding: 0px 12px;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .swiper-container .swiper-button-prev {
+  top: 40%;
+  left: 0px;
+  width: 14px;
+  background-size: 14px 44px;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .swiper-container .swiper-button-next {
+  top: 40%;
+  right: 0px;
+  width: 14px;
+  background-size: 14px 44px;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .el-cell {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100px !important;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .el-cell .cell-sku {
+  display: block;
+  text-decoration: none;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .el-cell .cell-sku .sku-img {
+  height: 100px;
+  overflow: hidden;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .el-cell .cell-sku .sku-img img {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .el-cell .cell-sku .sku-name {
+  font-size: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #222222;
+  line-height: 16px;
+  margin: 4px 0px;
+}
+.playvideo-panel .playback-layer .play-list .play-el .el-wrap .el-goods .el-cell .cell-sku .sku-price {
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 16px;
+  color: #F00208;
+}
+/*# sourceMappingURL=playvideo.css.map */

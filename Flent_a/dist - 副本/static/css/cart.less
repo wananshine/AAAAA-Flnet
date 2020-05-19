@@ -1,0 +1,220 @@
+// "out": true, "compress": true
+@import (reference) url(./base.less);
+[v-cloak] {
+    display: none;
+}
+
+.cart-panel {
+    .all;
+    .cart-inner{
+        width: @width;
+        margin: auto;
+        .logo-img{
+            height: 60px;
+            line-height: 68px;
+            padding: 50px 0px 28px;
+            font-size: 14px;
+            img{ float: left; margin-right: 10px; }
+        }
+        .cart-show{
+            .all;
+            .cart-table{
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                border: 1px solid #e8e8e8;
+                color: rgba(0,0,0,0.65);
+                font-size: 14px;
+                font-variant: tabular-nums;
+                line-height: 1.5;
+                list-style: none;
+                -webkit-font-feature-settings: 'tnum';
+                font-feature-settings: 'tnum';
+                position: relative;
+                clear: both;
+                input[type = checkbox]{
+                    display: none;
+                }
+                input[type = checkbox] + label{
+                    background-color: white;
+                    border-radius: 5px;
+                    border:1px solid #d3d3d3;
+                    width:20px;
+                    height:20px;
+                    display: inline-block;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 20px;
+                }
+                input[type = checkbox]:checked + label{
+                    background-color: #eee;
+                }
+                input[type = checkbox]:checked + label:after{
+                    content:"\2714";
+                }
+                .cart-head,
+                .cart-foot{
+                    tr{
+                        position: relative;
+                        background-color: aliceblue;
+                        th, td{
+                            position: relative;
+                            padding: 16px 0px 16px 10px;
+                            background: #fafafa;
+                            border-bottom: 1px solid #e8e8e8;
+                            &:nth-of-type(1){
+                                width: 6%;
+                                text-align: left;
+                            }
+                            &:nth-of-type(2){
+                                width: 12%;
+                            }
+                            &:nth-of-type(3){
+                                width: 35%;
+                            }
+                            &:nth-of-type(4){
+                                width: 12%;
+                            }
+                            &:nth-of-type(5){
+                                width: 18%;
+                            }
+                            &:nth-of-type(6){
+                                width: 12%;
+                            }
+                            .pt-total-money{
+                                padding-left: 58%;
+                                display: inline-block;
+                                vertical-align: middle;
+                                strong{
+                                    font-size: 28px;
+                                    font-weight: bold;
+                                    color: #ff272d;
+                                }
+                            }
+                            .btn-settlement{
+                                display: inline-block;
+                                line-height: 1;
+                                text-decoration: none;
+                                white-space: nowrap;
+                                cursor: pointer;
+                                background: #ff272d;
+                                letter-spacing: 3px;
+                                border: 1px solid #dcdfe6;
+                                color: #fff;
+                                -webkit-appearance: none;
+                                text-align: center;
+                                box-sizing: border-box;
+                                outline: none;
+                                margin: 0;
+                                transition: .1s;
+                                font-weight: 500;
+                                -moz-user-select: none;
+                                -webkit-user-select: none;
+                                -ms-user-select: none;
+                                font-size: 16px;
+                                border-radius: 4px;
+                                padding: 13px 46px;
+                                margin: 0px 16px 0px 20px;
+                            }
+                        } 
+                    }
+                }
+                .cart-body{
+                    .all;
+                    .pt-row{
+                        border-bottom: 1px solid #e8e8e8;
+                        td{ 
+                            padding: 16px 0px 16px 10px;
+                            box-sizing: border-box;
+                            vertical-align: top;
+                        }
+                        .pt-single-checked{
+                            text-align: center;
+                            vertical-align: middle;
+                        }
+                        .pt-img{
+                            .img{
+                                width: 120px;
+                                height: 120px;
+                                // margin: auto;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .pt-name{
+                            .pt-txt{
+                                .clamp2;
+                            }
+                            .pt-attr{
+                                color: #999;
+                                margin-top: 12px;
+                                display: inline-block;
+                                background-color: #e5e5e5;
+                                padding: 0px 10px;
+                            }
+                        }
+                        .pt-sale-price{
+                            text-align: center;
+                        }
+                        .pt-amount{
+                            position: relative;
+                            text-align: center;
+                            .pt-action{
+                                position: relative;
+                                display: inline-block;
+                                width: 156px;
+                                line-height: 38px;
+                                margin: 0px auto;
+                                .pt-minus{
+                                    width: 40px;
+                                    height: 40px;
+                                    line-height: 38px;
+                                    position: absolute; top: 1px; left: 1px;
+                                    z-index: 1;
+                                    text-align: center;
+                                    font-size: 13px;
+                                    color: #c0c4cc; 
+                                    background: #f5f7fa; 
+                                    border-radius: 4px 0 0 4px;
+                                    border-right: 1px solid #dcdfe6;
+                                    cursor: pointer;
+                                }
+                                .pt-input{
+                                    display: block;
+                                    position: relative;
+                                    width: 100%;
+                                    line-height: 38px;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    box-sizing: border-box;
+                                    padding: 0 50px;
+                                }
+                                .pt-plus{
+                                    width: 40px;
+                                    height: 40px;
+                                    line-height: 38px;
+                                    position: absolute; top: 1px; right: 1px;
+                                    z-index: 1;
+                                    text-align: center;
+                                    color: #606266;
+                                    font-size: 13px;
+                                    background: #f5f7fa;
+                                    border-radius: 0 4px 4px 0;
+                                    border-left: 1px solid #dcdfe6;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        .pt-total-price{
+                            font-weight: 600;
+                            color: #ff2b36;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

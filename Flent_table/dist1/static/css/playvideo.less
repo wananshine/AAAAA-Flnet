@@ -1,0 +1,179 @@
+// "out": true, "compress": true
+@import (reference) url(./base.less);
+[v-cloak] {
+  display: none;
+}
+
+
+.playvideo-panel {
+  .all;
+  margin-bottom: 50px;
+  background-color: #eee;
+  .playback-layer {
+    width: @width;
+    margin: auto;
+    .play-title {
+      font-size: 24px;
+      margin: 26px 0px 24px 0px;
+    }
+    .play-list {
+      .all;
+      width: 1215px;
+      .flexbox;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .play-el {
+        width: 390px;
+        .flexauto;
+        background-color: #fff;
+        margin-right: 15px;
+        margin-bottom: 37px;
+        .el-watch {
+          .all;
+          height: 200px;
+          background-color: rgba(0,0,0,0.2);
+          cursor: pointer;
+          .watch-link {
+            height: @full;
+            display: block;
+            font-size: 0px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% auto;
+            filter: blur(0px);
+            -webkit-filter: blur(0px);
+            transition: all 0.5s linear;
+            img {
+              .all;
+              transform: scale(1);
+              transition: all 0.5s linear;
+            }
+          }
+          .watch-num {
+            .fs-14;
+            color: #fff;
+            position: absolute;
+            left: 13px;
+            top: 13px;
+            padding: 6px 16px 5px 14px;
+            background-color: rgba(255,192,0,1);
+            border-radius: 13px;
+            z-index: 1;
+          }
+          .watch-name {
+            width: 60%;
+            position: absolute;
+            left: 14px;
+            bottom: 15px;
+            color: #fff;
+            z-index: 1;
+            letter-spacing: 1px;
+            .fs-16;
+            .ellipsis;
+          }
+          .watch-mask {
+            width: @full;
+            height: @full;
+            .poaCenter;
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: all 0.5s linear;
+          }
+          .watch-icon{
+            width: 58px;
+            height: 58px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -29px;
+            margin-top: -29px;
+            background-image: url("../img/circle@2x.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+            opacity: 0;
+            transform: scale(1.5);
+            transition: all 0.5s linear;
+          }
+          &:hover{
+            .watch-link{
+              //filter: blur(2px);
+              //-webkit-filter: blur(2px);
+              //transition: all 0.5s linear;
+              img{
+                transform: scale(1.2);
+                transition: all 0.5s linear;
+              }
+            }
+            .watch-icon{
+              opacity: 1;
+              transform: scale(1);
+              transition: all 0.5s linear;
+            }
+            .watch-mask{
+              opacity: 1;
+              transition: all 0.5s linear;
+            }
+          }
+        }
+        .el-wrap {
+          padding-bottom: 18px;
+          .el-title {
+            .fs-18;
+            padding: 0px 12px;
+            position: relative;
+            font-weight: 400;
+            color: rgba(34,34,34,1);
+            margin: 12px 0px 14px 0px;
+          }
+          .el-goods {
+            .swiper-container{
+              padding: 0px 12px;
+              .swiper-button-prev{
+                top: 40%;
+                left: 0px;
+                width: 14px;
+                background-size: 14px 44px;
+              }
+              .swiper-button-next{
+                top: 40%;
+                right: 0px;
+                width: 14px;
+                background-size: 14px 44px;
+              }
+            }
+            .el-cell {
+              .all;
+              cursor: pointer;
+              width: 100px !important;
+              .cell-sku {
+                display: block;
+                text-decoration: none;
+                .sku-img {
+                  height: 100px;
+                  overflow: hidden;
+                  img {
+                    .all;
+                  }
+                }
+                .sku-name {
+                  .fs-12;
+                  .clamp2;
+                  color: rgba(34,34,34,1);
+                  line-height: 16px;
+                  margin: 4px 0px;
+                }
+                .sku-price {
+                  .fs-12;
+                  .ellipsis;
+                  line-height: 16px;
+                  color: #F00208;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
